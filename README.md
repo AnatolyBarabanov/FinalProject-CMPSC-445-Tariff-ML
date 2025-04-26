@@ -25,9 +25,25 @@ It includes consumer price forecasting, industry clustering, and risk classifica
 
 ## 🔧 Project Structure
 
+FinalProject-CMPSC-445-Tariff-ML/
 
+├── models/                # Trained machine learning models (.pkl)
 
+│    └── price_forecast_model.pkl
 
+│    └── clustering_model.pkl
+
+│    └── risk_classification_model.pkl
+
+├── data/                  # Dataset (World Bank CMO data)
+
+│    └── CMO-Historical-Data-Monthly.xlsx
+
+├── tariff_dashboard1.py   # Main Streamlit dashboard app
+
+├── requirements.txt       # Python libraries to install
+
+└── README.md              # Project description
 
 ---
 
