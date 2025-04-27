@@ -1,13 +1,33 @@
 # FinalProject-CMPSC-445-Tariff-ML
 
-This project analyzes the impact of tariffs on global commodity markets using machine learning techniques. 
+## Description of the Project
+This project develops a machine learning-based Tariff Impact Dashboard that enables users to:
 
-It includes consumer price forecasting, industry clustering, and risk classification — all integrated into an interactive Streamlit dashboard.
+- forecast commodity prices,
+
+- cluster commodities based on their price behavior,
+
+- classify commodity risk levels.
+
+The system uses the World Bank's "CMO-Historical-Data-Monthly.xlsx" dataset and integrates three trained models (Regression, Clustering, Classification) into interactive Streamlit web application.
 
 Live Website: [![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-green?logo=streamlit)](https://finalproject-cmpsc-445-tariff-ml-ka3ig4hwa93cmwpuusycyv.streamlit.app)
 
 ---
+## Significance of the Project
 
+Understanding commodity market behavior is crucial for traders, and businesses.
+Our dashboard provides:
+
+- Forecasting of future prices to support better economic decisions,
+
+- Clustering of commodities for comparative analysis,
+
+- Risk classification to highlight commodities with high volatility risks.
+
+The project integrates multiple ML techniques into one web platform, offering real-time insights into complex tariff-related economic trends.
+
+---
 ## Project Goals
 
 - Predict future commodity prices.
@@ -17,12 +37,27 @@ Live Website: [![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20Ap
 
 ---
 
-## Dataset
+## Data Collection
 
 - **Source:** [World Bank – Commodity Markets](https://www.worldbank.org/en/research/commodity-markets)
 - **File:** `CMO-Historical-Data-Monthly.xlsx`
 - Monthly commodity prices across agriculture, energy, and metals sectors.
 
+Data Characteristics:
+
+- Covers over 80 commodities.
+
+- Time range: 1980s–2025s.
+
+Data points: Monthly price observations.
+
+Metadata Fields:
+
+- Commodity name
+
+- Units (e.g., USD/ton, USD/barrel)
+
+- Monthly price values
 ---
 
 ## Project Structure
@@ -103,8 +138,25 @@ and scripts:
 > ```bash
 > streamlit run tariff_dashboard.py
 > ```
+---
+## Instructions for Web Usage
 
-## Machine Learning Models
+To access and use the web app:
+
+1. Open the website:
+- [![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-green?logo=streamlit)](https://finalproject-cmpsc-445-tariff-ml-ka3ig4hwa93cmwpuusycyv.streamlit.app)
+
+2. Choose a feature from the sidebar:
+
+- Price Forecasting: Select a commodity to predict future prices.
+
+- Commodity Clustering: View clustering results with visualization.
+
+- Risk Classification: Select a commodity and get risk predictions (High / Medium / Low).
+
+---
+
+## Functionalities and Test Results / Machine Learning Models
 
 | Task                   | Model                | Description                                   |
 |------------------------|----------------------|-----------------------------------------------|
@@ -112,8 +164,48 @@ and scripts:
 | Industry Clustering    | KMeans + PCA         | Clusters commodities by trends                |
 | Risk Classification    | Decision Tree        | Categorizes commodities into risk classes     |
 
----
+Test Results:
+- Models load correctly from /models/.
 
+- Forecasted prices align with known trends.
+
+- Clusters are distinct and logically grouped.
+
+- Risk classifier produces consistent predictions across different commodities.
+---
+## Data Processing
+
+Preprocessing Steps:
+
+- Dropped commodities with excessive missing values.
+
+- Selected the most recent 60 months (5 years) for consistency.
+
+- Scaled features (StandardScaler) for KMeans clustering.
+
+Feature Engineering:
+
+- Created lag-based features for time series forecasting.
+
+- Computed price volatility to categorize risk levels.
+
+- PCA (Principal Component Analysis) applied for visual clustering plots.
+---
+## Model Development 
+| Model                   | Inputs                | Output                                   |
+|------------------------|----------------------|-----------------------------------------------|
+| Linear Regression	      | Last 5 months of prices | Next month price     |
+| KMeans Clustering   |Scaled monthly price trends	| Cluster assignment              |
+| Decision Tree Classifier	    | Price volatility	      | Risk level (High/Medium/Low)     |
+
+Algorithms Justification:
+- Linear Regression: Interpretable and effective for short-term forecasting.
+
+- KMeans: Best suited for unsupervised commodity behavior grouping.
+
+- Decision Tree: Easy to interpret and efficient for risk prediction.
+
+---
 ## How to Run
 
 1. **Clone the repo**
@@ -131,3 +223,16 @@ and scripts:
 4. **Launch the dashboard**
    ```bash
     streamlit run tariff_dashboard.py
+---
+## Discussion and Conclusions
+Findings:
+- Price forecasting works well for most stable commodities.
+
+- Clustering reveals logical groupings like precious metals, agriculture, and energy.
+
+- Risk classification effectively highlights high-volatility commodities.
+
+Project Challenges:
+- Risk labels were inferred based on volatility rather than from labeled training data.
+
+- Volatile commodities occasionally caused forecasting errors.
