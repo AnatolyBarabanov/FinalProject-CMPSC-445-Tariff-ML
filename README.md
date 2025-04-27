@@ -76,11 +76,23 @@ FinalProject-CMPSC-445-Tariff-ML/
 
 │    └── CMO-Historical-Data-Monthly.xlsx
 
+├── scripts/
+
+│    └── tariff_models.py
+
+│    └── train_regression.py
+
+│    └── train_kmean.py
+
+│    └── train_classifier.py
+
 ├── requirements.txt       # Python libraries to install
 
 └── README.md              # Project description
 
-and scripts:
+└── tariff_dashboard.py
+
+Scripts:
 
  ### 1. `tariff_models.py` — First to Run: Shared Model Functions
 
