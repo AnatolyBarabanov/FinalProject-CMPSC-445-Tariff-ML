@@ -4,7 +4,7 @@ This project analyzes the impact of tariffs on global commodity markets using ma
 
 It includes consumer price forecasting, industry clustering, and risk classification — all integrated into an interactive Streamlit dashboard.
 
-🌐 Live Website: [![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-green?logo=streamlit)](https://finalproject-cmpsc-445-tariff-ml-ka3ig4hwa93cmwpuusycyv.streamlit.app)
+Live Website: [![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-green?logo=streamlit)](https://finalproject-cmpsc-445-tariff-ml-ka3ig4hwa93cmwpuusycyv.streamlit.app)
 
 ---
 
