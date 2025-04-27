@@ -47,66 +47,62 @@ FinalProject-CMPSC-445-Tariff-ML/
 
 and scripts:
 
-   1. tariff_models.py — First to run, Shared Model Functions
+ ### 1. `tariff_models.py` — First to Run: Shared Model Functions
 
-Contains helper functions for training and saving machine learning models.
+- Contains **helper functions** for training and saving machine learning models.
+- Functions are imported into the training scripts (`train_classifier.py`, `train_kmean.py`, `train_regression.py`).
 
-Functions are imported into the training scripts (train_classifier.py, train_kmean.py, train_regression.py) to avoid code duplication.
+ ### 2. `train_regression.py` — Price Forecasting Model Trainer
 
-   2. train_regression.py — Price Forecasting Model Trainer
+- Trains a **Linear Regression model** to **predict future commodity prices**.
+- Loads historical data from **`CMO-Historical-Data-Monthly.xlsx`**.
+- Fits the model using previous months' prices as input features.
+- Saves the trained model to:
+   ```bash
+   models/price_forecast_model.pkl
 
-Trains a Linear Regression model to predict future commodity prices.
+> **Run this file after `tariff_models.py` to create the price forecasting model.**
 
-Loads historical commodity price data from CMO-Historical-Data-Monthly.xlsx.
+ ### 3. `train_kmean.py` — Clustering Model Trainer
 
-Fits the model using previous months' prices as input features.
+- Trains a **KMeans clustering model** to **group commodities** based on their price trends.
+- Uses **Principal Component Analysis (PCA)** for cluster visualization.
+- Automatically determines the **optimal number of clusters** using the **Silhouette Score**.
+- Saves:
+- Clustering model:
+  ```
+  models/clustering_model.pkl
+  ```
+- Cluster visualization plot:
+  ```
+  commodity_clusters.png
+  ```
+  
+> **Run this file third to create the clustering model.**
 
-Saves the trained model to:
-➔ models/price_forecast_model.pkl
+ ### 4. `train_classifier.py` — Risk Classification Model Trainer
 
-Run this file after tariff_models.py to create the forecasting model.
+- Trains a **Decision Tree Classifier** to **predict commodity risk levels** (`High`, `Medium`, `Low`).
+- Defines risk categories based on **recent price volatility**.
+- Saves the trained classifier model to:
+   ```bash
+   models/risk_classification_model.pkl
+> **Run this file fourth to create the risk classification model.**
 
-   3. train_kmean.py — Clustering Model Trainer
-   
-Trains a KMeans clustering model to group commodities based on their price trends.
+### 5. `tariff_dashboard.py` — Streamlit Web Application
 
-Uses Principal Component Analysis (PCA) for cluster visualization.
+- Combines all three trained models into an **interactive Streamlit dashboard**.
+- Features:
+- **Forecast future commodity prices**
+- **View commodity clusters**
+- **Predict commodity risk levels**
+- Loads models from the `models/` folder.
+- Displays **interactive charts**, **tables**, and **real-time predictions**.
 
-Automatically determines the optimal number of clusters using Silhouette Score.
-
-Saves:
-
-Clustering model ➔ models/clustering_model.pkl
-
-Cluster visualization ➔ commodity_clusters.png
-
-Run this file third to create the clustering model.
-
-   4. train_classifier.py — Risk Classification Model Trainer
-   
-Trains a Decision Tree Classifier to predict commodity risk levels (High / Medium / Low).
-
-Defines risk categories based on recent price volatility.
-
-Saves the trained classifier model to:
-➔ models/risk_classification_model.pkl
-
-Run this file fourth to create the risk prediction model.
-
-   5. tariff_dashboard.py — Streamlit Web Application
-Combines all three models into an interactive Streamlit dashboard.
-
-Allows users to:
-
-Forecast future commodity prices.
-
-View cluster analysis of commodities.
-
-Predict commodity risk levels.
-
-Loads models from the models/ folder.
-
-Displays interactive charts, tables, and predictions.
+> **After training all models, run this file to launch the web app:**
+> ```bash
+> streamlit run tariff_dashboard.py
+> ```
 
 ## Machine Learning Models
 
