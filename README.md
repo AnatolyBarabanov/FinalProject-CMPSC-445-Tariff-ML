@@ -82,7 +82,7 @@ FinalProject-CMPSC-445-Tariff-ML/
 
 │    └── train_regression.py
 
-│    └── train_kmean.py
+│    └── train_kmeans.py
 
 │    └── train_classifier.py
 
