@@ -66,9 +66,11 @@ FinalProject-CMPSC-445-Tariff-ML/
 
 ├── models/                # Trained machine learning models (.pkl)
 
+│    └──kmeans_model.pkl
+
 │    └── price_forecast_model_commodities.pkl
 
-│    └── clustering_model.pkl
+│    └── kmeans_scaler.pkl
 
 │    └── risk_classification_commodities.pkl
 
