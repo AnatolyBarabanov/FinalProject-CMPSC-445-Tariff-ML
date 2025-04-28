@@ -66,11 +66,11 @@ FinalProject-CMPSC-445-Tariff-ML/
 
 ├── models/                # Trained machine learning models (.pkl)
 
-│    └── price_forecast_model.pkl
+│    └── price_forecast_model_<commodities>.pkl
 
 │    └── clustering_model.pkl
 
-│    └── risk_classification_model.pkl
+│    └── risk_classification_<commodities>.pkl
 
 ├── data/                  # Dataset (World Bank CMO data)
 
