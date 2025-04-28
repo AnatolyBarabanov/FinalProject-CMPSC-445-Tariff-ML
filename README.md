@@ -1,4 +1,6 @@
 # FinalProject-CMPSC-445-Tariff-ML
+Made by AnatolyBarabanov and Matthew Danese 
+Professor: Janghoon Yang
 
 ## Description of the Project
 This project develops a machine learning-based Tariff Impact Dashboard that enables users to:
