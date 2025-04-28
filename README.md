@@ -136,7 +136,7 @@ Scripts:
    models/risk_classification_model.pkl
 > **Run this file fourth to create the risk classification model.**
 
-### 5. `tariff_dashboard.py` — Streamlit Web Application
+### 5. `tariff_dashboard1.py` — Streamlit Web Application
 
 - Combines all three trained models into an **interactive Streamlit dashboard**.
 - Features:
@@ -148,7 +148,7 @@ Scripts:
 
 > **After training all models, run this file to launch the web app:**
 > ```bash
-> streamlit run tariff_dashboard.py
+> streamlit run tariff_dashboard1.py
 > ```
 ---
 ## Instructions for Web Usage
@@ -234,17 +234,24 @@ Algorithms Justification:
     python train_risk_classification.py
 4. **Launch the dashboard**
    ```bash
-    streamlit run tariff_dashboard.py
+    streamlit run tariff_dashboard1.py
 ---
-## Discussion and Conclusions
-Findings:
-- Price forecasting works well for most stable commodities.
+## Discussion and conclusions
 
-- Clustering reveals logical groupings like precious metals, agriculture, and energy.
+This was a very interesting project. Especially it was very fun as a group. We were able to work together to make this project exactly the way we wanted it. We quickly determined what we would do and found a data source. Working together allowed to add more to the project.
 
-- Risk classification effectively highlights high-volatility commodities.
+Conclusions:
 
-Project Challenges:
-- Risk labels were inferred based on volatility rather than from labeled training data.
+- Price forecasting works well for most stable goods.
 
-- Volatile commodities occasionally caused forecasting errors.
+- Clustering identifies logical groups such as precious metals, agriculture and energy.
+
+- Risk classification effectively identifies goods with high volatility.
+
+Project problems:
+
+- Initially there were problems with regression due to improper cleaning, but after better cleaning, everything went well.
+
+- Creating the site was also difficult, because there is very little experience working with python sites. For a long time, Price Forecasting simply did not load on the site, we were able to solve the problem by adding some edits to the tariff_dashboard1.py code.
+
+- And unstable commodities occasionally caused forecasting errors.
